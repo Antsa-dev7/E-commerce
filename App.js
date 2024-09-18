@@ -1,7 +1,14 @@
-import React from 'react';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Providers from './navigation';
+import RootStackScreen from "./screen/RockStackScreen";
 
-export default function App() {
-  return <Providers />;
+const App = () => {
+  return (
+    <NavigationContainer>
+      <RootStackScreen />
+    </NavigationContainer>
+  )
 }
+
+export default App;

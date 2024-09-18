@@ -1,6 +1,6 @@
-import * as firebase from 'firebase';
-import 'firebase/auth';
+import firebase from 'firebase';
 
+// Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDZySZc49Fcy21M90QpDSDJRswFgbQcT8E",
 
@@ -18,23 +18,15 @@ var firebaseConfig = {
 
   measurementId: "G-E3MBRJQ35L"
 };
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+//firebase.analytics();
 
 export default firebase;
-
-
-
-export const auth = firebase.auth();
-
-export const loginWithEmail = (email, password) =>
-  auth.signInWithEmailAndPassword(email, password);
 
 export const registerWithEmail = (email, password) =>
   auth.createUserWithEmailAndPassword(email, password);
 
-export const logout = () => auth.signOut();
+export const auth = firebase.auth();
 
 export const passwordReset = email => auth.sendPasswordResetEmail(email);
